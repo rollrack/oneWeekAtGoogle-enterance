@@ -1,0 +1,395 @@
+
+
+
+
+
+<!-- Note to the reader: if you decided to check my code, then welocome to the dungeon! BUT PLS DON'T KILL ME BECAUSE I'VE
+PUT ALL THE CSS AND JS IN THE FILE. I didn't want to send too many files, so i put them in one T_T -->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>Hey, Google!</title>
+    <style>
+        *{
+            color:white;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        html{
+            scroll-behavior: smooth;
+        }
+
+        body{
+            background-color: rgb(17, 16, 16);
+        }
+
+        h1, h2, h3, h4, h5{
+            text-align: center;
+            text-shadow: rgb(46, 43, 43) 0px 0px 30px;
+        }
+
+        h1{
+            font-size: 500%;
+        }
+
+        h2, h4{
+            font-size: 200%;
+        }
+
+        h3{
+            font-size: 300%;
+        }
+
+        h5{
+            font-size: 170%;
+        }
+
+        p{
+            font-size: 150%;
+            text-align: justify;
+        }
+
+        button{
+            font-size: 150%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 20%;
+            height: 20%;
+            padding: 2%;
+            border-radius: 10px;
+            background-image: linear-gradient(to right bottom, #fa00ff, #de02f0, #c202e0, #a701d0, #8d00bf);
+            border: unset;
+            cursor: pointer;
+            box-shadow: rgba(43, 43, 43, 0.164) 0px 0px 50px 10px;
+            text-shadow: rgba(102, 102, 102, 0.584) 0px 0px 30px;
+            transition: all .2s ease-in-out;
+        }
+
+        ul{
+            font-size: 150%;
+            text-align: justify;
+        }
+
+        .normalBox > h1, h2, h3, h4, h5{
+            text-shadow: rgba(102, 102, 102, 0.584) 0px 0px 30px;
+        }
+
+        .highlightedBox, .normalBox{
+            height: 30%;
+            margin: 10% 1%;
+            border-radius: 10px;
+            padding: 5% 15%;
+        }
+
+        .highlightedBox{
+            box-shadow: rgba(43, 43, 43, 0.584) 0px 0px 50px 30px;
+        }
+
+        #aboutMe{
+            background-image: linear-gradient(to right bottom, #980dc9, #8d09bb, #8205ae, #7702a0, #6c0093);
+        }
+
+        #music{
+            background-image: linear-gradient(to right bottom, #00ff5b, #07ed5a, #10dc59, #17ca57, #1db954);
+        }
+
+        #shows{
+            background-image: linear-gradient(to right bottom, #ff000d, #f60310, #ed0612, #e40814, #db0b15);
+        }
+
+        .flex{
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+        }
+
+        .flex > div{
+            width: 30%;
+        }
+
+        #projects > h4 {
+            text-align: left;
+        }
+
+        .spoty{
+            /* background-color: #3bff7f; */
+            background-image: linear-gradient(to left bottom, #3bff7f, #31ff77, #26ff6e, #18ff65, #00ff5b);
+            height: fit-content;
+            width: fit-content;
+            border-radius: 10px;
+            box-shadow: rgba(46, 43, 43, 0.388) 0px 0px 30px;
+            transition: all .2s ease-in-out;
+            cursor: pointer;
+        }
+
+        .netly{
+            /* background-color:#ff2732; */
+            background-image: linear-gradient(to left bottom, #ff2732, #ff202b, #ff1822, #ff0e19, #ff000d);
+            height: fit-content;
+            width: fit-content;
+            border-radius: 10px;
+            box-shadow: rgba(46, 43, 43, 0.388) 0px 0px 30px;
+            transition: all .2s ease-in-out;
+            cursor: pointer;
+        }
+
+        .netly:hover, .spoty:hover, button:hover { transform: scale(1.1); }
+
+        img{
+            border-radius: 10px;
+            object-fit: cover;
+            width: 15vw;
+            height: 15vw;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10%;
+            box-shadow: rgba(46, 43, 43, 0.388) 0px 0px 10px;
+        }
+
+        iframe{
+            width: min-content;
+            height: min-content;
+            border-radius: 10px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .netly > iframe{
+            margin-top: 10%;
+            box-shadow: rgba(46, 43, 43, 0.388) 0px 0px 10px;
+        }
+
+        ::-webkit-scrollbar{
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track{
+            /* margin: 10px 5px; */
+            background-color: rgba(0, 0, 0, 0);
+            
+        }
+
+        ::-webkit-scrollbar-thumb{
+            background: rgb(120, 120, 120);
+            border-radius: 10px;
+        }
+
+        .scale-up-center{animation:scale-up-center .4s cubic-bezier(.39,.575,.565,1.000) both}
+
+        /* ----------------------------------------------
+        * Generated by Animista on 2022-9-9 15:2:37
+        * Licensed under FreeBSD License.
+        * See http://animista.net/license for more info. 
+        * w: http://animista.net, t: @cssanimista
+        * ---------------------------------------------- */
+
+        @keyframes scale-up-center{0%{transform:scale(.5)}100%{transform:scale(1)}}
+    </style>
+</head>
+<body>
+    <div class="normalBox" id="start">
+        <h1 class="scale-up-center">Hey There!</h1>
+        <h3 class="scale-up-center">Scroll down to see more!</h3>
+        <button class="scale-up-center" onclick="alert('Hehe, silly goose :D')">CLICK ME!</button>
+    </div>
+
+    <div class="highlightedBox" id="aboutMe">
+        <h2>Hi! My name is Yoan Perenovski, nice to meet You!</h2>
+        <p>I am a 17-year-old from Bulgaria who is interested in computers and technology, design, music, 
+            sport, hanging out with friends and travelling! My favourite animals are dogs, penguins and turtles, my favourite 
+        dishes are sushi and lazagna, and the drinks - bubble tea and Java Chip!</p>
+    </div>
+
+    <div class="normalBox" id="countries">
+        <h2>A little bit more about myself:</h2> 
+        <ul>
+            <li>Throughout my life, I lived in different countries: Bulgaria, Ukraine, Russia, Ireland, etc. This made me adaptive
+                to new environment and allowed me to study thorugh various educational systems.
+            </li>
+            <li>
+                I have studied different programming courses, tried different sports, and have been a part of dramaclubs. 
+            </li>
+            <li>I enjoy the extremity, love to visit theme and waterparks, and to try new thing that I have never done before. I also like to hang out with my friends,
+                but sometimes I would rather stay at home and play games or watch a movie/YouTube :).</li>
+        </ul>
+    </div>
+
+    <div class="highlightedBox" id="music"> 
+        <h2>Music I like to listen to:</h2>
+        <div class="flex">
+            <div class="spoty" onclick="uTriedToClick()">
+                <img src="https://i.pinimg.com/564x/91/ec/14/91ec14d5ac1527d2db35b902e170333a.jpg" alt="">
+                <h5>K-Pop</h5>
+                <iframe style="border-radius:12px; margin-bottom: 0%;" src="https://open.spotify.com/embed/track/5uFqjHOo3Sh0bVPCKf3DdH?utm_source=generator" width="40%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="spoty" onclick="uTriedToClick()">
+                <img src="https://upload.wikimedia.org/wikipedia/en/a/ac/Nathan_Dawe_x_Ella_Henderson_-_21_Reasons.jpg" alt="">
+                <h5>EDM, Ibiza</h5>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1RF02Cf80mTaeNXG2P2boR?utm_source=generator" width="20vm" height="20vm" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="spoty" onclick="uTriedToClick()">
+                <img src="https://media.pitchfork.com/photos/62f52122fb533f934dff0627/1:1/w_320,c_limit/Megan-Thee-Stallion-Traumazine.jpg" alt="">
+                <h5>Rap, R&B</h5>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3BFxkzhkESwALQxjxOVFgJ?utm_source=generator" width="40%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+        </div>
+        <h4>...and many more!</h4>
+    </div>
+
+    <div class="normalBox" id="projects">
+        <h2>Projects, Competitions and Events I have participated in:</h2>
+        <h4>Re->Cycle</h4> 
+        <p>
+            <ul> 
+                <li>In 2021, I and my team decided to participate in 'HackTuesGG' - a 3-day-long hackaton, 
+                organised by TUES of TU - Sofia, Bulgaria.</li>
+                <li>Main topic - 'Go Green'.</li> 
+                <li>We came up with the game 'Re->Cycle' whose main goal is to collect recycable rubbish around the map and throw it away in the correct bin.</li> 
+                <li>Aim - to create an entertainable software that will encourage the younger generations to recycle properly.</li>
+                <li>My role - the leader of the team, supervising the whole process of production and providing help if needed.</li>
+            </ul>
+        </p>
+        <h4>Teacher Tower</h4>
+        <p>
+            <ul>
+            <li>In 2021-2022, I participated in 'SciFest@2021-2022' with my team.</li>
+            <li>We created an educational software - the game 'Teacher Tower'.</li>
+            <li>Main goal - to help the adventurer Yuki escape the King Brick's prison for travellers.</li>
+            <li>They have to solve various puzzles from different school subjects.</li> 
+            </li>Along with SciFest, we joined 'Student Enterprise Competition',
+            so with 'Teacher Tower' we won multiple awards in different competitions.</li>
+            <li>Mian roles (in terms of game production) - team leader and programmer.</li>
+            <li>Main roles (in term of enterprise project) - market research, advertising and social media.</li>
+        </ul>
+        </p>
+        <h4>AIPO 2022</h4>
+        <p>
+            Last year, I challenged myself by joining 'All Ireland Programming Olympiad 2022', where I had to show my problem-solving
+            and programming skills. I made it to the National Finals, which happened to be on the same date as my flight. So,
+            it was a great fun to compete and rush to the gate at the airport at the same time :).
+        </p>
+        <h4>St. Patrick's Day Parade 2022</h4>
+        <p>
+            Music is a major part of my lifestyle. It accompanies everything I do: studying, programming, travelling, working, 
+            resting, and... dancing! I enjoy dancing. Currently I do hip-hop at ITW and this year I had the chance to participate in
+            the St. Patrick's Day Parade and had an amazing time! (and an amazing muscle soreness^^').     
+        </p>
+    </div>
+
+    <div class="highlightedBox" id="shows">
+        <h2>Shows I would recommend:</h2>
+        <div class="flex">
+            <div class="netly" onclick="uTriedToClick()">
+                <iframe src="https://www.youtube.com/embed/sj9J2ecsSpo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <h5>WandaVision</h5>
+            </div>
+            <div class="netly" onclick="uTriedToClick()">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/FrK4xPy4ahg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <h5>Heartstopper</h5>
+            </div>
+            <div class="netly" onclick="uTriedToClick()">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/x7Krla_UxRg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <h5>Moon Knight</h5>
+            </div>
+        </div>
+    </div>
+
+    <div class="normalBox" id="Fin">
+        <h2>Thank you for Your attention!</h2>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/ScrollTrigger.min.js"></script>
+    <!-- <script src="script.js"></script> -->
+    <script>
+        const boxes = gsap.utils.toArray('.highlightedBox');
+
+        boxes.forEach((box, i) => {
+        const anim = gsap.fromTo(box, {autoAlpha: 0, y: 50}, {duration: 1, autoAlpha: 1, y: 0});
+        ScrollTrigger.create({
+            trigger: box,
+            start: 'top center',
+            animation: anim,
+            toggleActions: 'play none none none',
+            once: true,
+        });
+        });
+
+        const paragraphs = gsap.utils.toArray('p');
+
+        paragraphs.forEach((box, i) => {
+        const anim = gsap.fromTo(box, {autoAlpha: 0, y: 50}, {duration: 1, autoAlpha: 1, y: 0});
+        ScrollTrigger.create({
+            trigger: box,
+            start: 'top 65%',
+            animation: anim,
+            toggleActions: 'play none none none',
+            once: true,
+        });
+        });
+
+        const headings2 = gsap.utils.toArray('h2');
+
+        headings2.forEach((box, i) => {
+        const anim = gsap.fromTo(box, {autoAlpha: 0, y: 50}, {duration: 1, autoAlpha: 1, y: 0});
+        ScrollTrigger.create({
+            trigger: box,
+            start: 'top 85%',
+            animation: anim,
+            toggleActions: 'play none none none',
+            once: true,
+        });
+        });
+
+        const headings4 = gsap.utils.toArray('h4');
+
+        headings4.forEach((box, i) => {
+        const anim = gsap.fromTo(box, {autoAlpha: 0, y: 50}, {duration: 1, autoAlpha: 1, y: 0});
+        ScrollTrigger.create({
+            trigger: box,
+            start: 'top 85%',
+            animation: anim,
+            toggleActions: 'play none none none',
+            once: true,
+        });
+        });
+
+        const ul = gsap.utils.toArray('ul');
+
+        ul.forEach((box, i) => {
+        const anim = gsap.fromTo(box, {autoAlpha: 0, y: 50}, {duration: 1, autoAlpha: 1, y: 0});
+        ScrollTrigger.create({
+            trigger: box,
+            start: 'top 85%',
+            animation: anim,
+            toggleActions: 'play none none none',
+            once: true,
+        });
+        });
+        let uTriedToClick = function () {
+            let n = Math.floor(Math.random() * 3)
+
+            if (n == 0)
+                alert('You are still trying to click?')
+            if (n == 1)
+                alert('Maybe next time :*')
+            if (n == 2)
+                alert('BAHAHAHAHAHAH')
+        }
+    </script>
+</body>
+</html>
